@@ -8,6 +8,6 @@ namespace Business.Abstract
     public interface IProductService
     {
         List<Product> GetAll();
-
+        List<Product> GetAllByCategor(int Id);
     }
 }

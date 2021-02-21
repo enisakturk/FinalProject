@@ -3,14 +3,15 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace DataAccess.Contrete.InMemory
 {
-    public class InMemoryProductDal : IPropductDal
+    public class EfMemoryProductDal : IProductDal
     {
         List<Product> _Products;
-        public InMemoryProductDal()
+        public EfMemoryProductDal()
         {
             _Products = new List<Product>
             {
@@ -52,9 +53,14 @@ namespace DataAccess.Contrete.InMemory
            return _Products.Where(P => P.CategoryID == CategoryId).ToList();
         }
 
+        public List<Product> GetAll(Expression<Func<Product, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
 
-
-
-
+        public Product Get(Expression<Func<Product, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

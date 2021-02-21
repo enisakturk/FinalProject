@@ -10,21 +10,23 @@ namespace Business.Concrete
     public class ProductManager : IProductService
     {
         IProductDal _productDal;
-        private InMemoryProductDal ınMemoryProductDal;
+        private EfMemoryProductDal efMemoryProductDal;
 
         public ProductManager(IProductDal productDal)
         {
             _productDal = productDal;
         }
 
-        public ProductManager(InMemoryProductDal ınMemoryProductDal)
+        public ProductManager(EfMemoryProductDal efMemoryProductDal)
         {
-            this.ınMemoryProductDal = ınMemoryProductDal;
+            this.efMemoryProductDal = efMemoryProductDal;
         }
 
         public List<Product> GetAll()
         {
             return _productDal.GetAll(); 
         }
+
+        
     }
 }
