@@ -1,5 +1,6 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +9,10 @@ using System.Text;
 
 namespace DataAccess.Contrete.InMemory
 {
-    public class EfMemoryProductDal : IProductDal
+    public class EfProductDal : IProductDal
     {
         List<Product> _Products;
-        public EfMemoryProductDal()
+        public EfProductDal()
         {
             _Products = new List<Product>
             {
@@ -59,6 +60,11 @@ namespace DataAccess.Contrete.InMemory
         }
 
         public Product Get(Expression<Func<Product, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<ProductDetailDto> GetProductDetail()
         {
             throw new NotImplementedException();
         }
